@@ -1,0 +1,60 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    @media screen and (max-width:300) {
+          img{
+            width:;
+          }
+    }
+        
+</style>
+
+<body>
+    <center><b>User Information</b></center>
+    <img src="C:\Users\mathankumar.s\Downloads\Chandrayaan.jpg" />
+    <form>
+       <label>FirstName</label><input type="text" name="firstName" placeholder="Enter first name"/><br><br>
+       <label>LastName</label> <input type="text" name="lastName" placeholder="Enter last name"/><br><br>
+        <label>Address</label><input type="text" name="Address" placeholder="Enter Address"/><br><br>
+        <label>phoneNo</label><input type="number" name="phoneNo" placeholder="Enter phoneNo"/><br><br>
+        <label>email</label><input type="email" name="email" placeholder="Enter email"/><br><br>
+        <input type="button" value="Add" onclick="AddInfo()"><br><input type="button" value="Get" onclick="GetInfo()">
+        <fieldset>
+            <legend>
+        Select Gender 
+    </legend>
+    <input type="radio" name="Gender" value="M"/>Male&nbsp;&nbsp;<input type="radio" name="Gender" value="F"/>Female<br>
+        </fieldset>
+      <br>
+      <fieldset>
+        <legend>Hobbies  </legend>
+        <input type="checkbox" name="Hobbies" value="Cricket">Cricket<br>
+        <input type="checkbox" name="Hobbies" value="Football">Football<br>
+        <input type="checkbox" name="Hobbies" value="Music">Music<br>
+   
+      </fieldset>
+        <table id="Table" border="5px">
+            <tr><td>Firstname</td><td>LastName</td><td>Address</td><td>phoneNo</td><td>email</td></tr>
+        </table>
+    
+    </form>
+</body>
+<script>
+    function AddInfo(){
+        var fName=document.forms[0].firstName.value;
+        var lName=document.forms[0].lastName.value;
+        var Addr=document.forms[0].Address.value;
+        var phno=document.forms[0].phoneNo.value;
+        var email1=document.forms[0].email.value;
+        localStorage.firstName=fName;
+        localStorage.lastName=lName;
+        localStorage.Address=Addr;
+        localStorage.phoneNo=phno;
+        localStorage.email=email1;
+
+        var  a=0;
+        var b=1;
+        var c=a+b;
+    }
+    
+</script>

@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <script>   
+              
+              var book=new Object();
+                    book.id;
+                    book.name;
+                    book.price;
+                    book.title;
+                    book.author;
+                    book.getId=function(){ return this.id;}
+                    book.setId=function(s){ this.id=s}
+                    book.getName=function(){ return this.name;}
+                    book.setName=function(s){ this.name=s}
+                    book.getPrice=function(){ return this.price;}
+                    book.setPrice=function(s){ this.price=s}
+                    book.getTitle=function(){ return this.title;}
+                    book.setTitle=function(s){ this.title=s}
+                    book.getAuthor=function(){ return this.author;}
+                    book.setAuthor=function(s){ this.author=s}  
+        </script>
+        </head>
+    <body>
+        <form>
+            <center>
+                <br>
+                <label>Book ID : </label>
+                <input type="number" id="id" placeholder="Enter Book ID" /><br><br>
+                <label>Book Name: </label>
+                <input type="text" id="name" placeholder="Enter Book Name" /><br><br>
+                <label>Book Price: </label>
+                <input type="number" id="price" placeholder="Enter Book Price" /><br><br>
+                <label>Book Title:</label>
+                <input type="text" id="title" placeholder="Enter Book Title" /><br><br>
+                <label>Book Author:</label>
+                <input type="text" id="auhtor" placeholder="Enter Book Author" /><br><br>
+                <input type="submit" value="Save" onclick="addBook()" />
+                <input type="button" value="Print" onclick="printBook()" />
+                <br>
+                <br>
+                <ul  id="ulid">
+                    <li id="liid"></li>
+                    <li id="liname"></li>
+                    <li id="liprice"></li>
+                    <li id="lititle"></li>
+                    <li id="liauhtor"></li>
+                </ul>
+             
+            </center>
+            <script >
+                
+                    
+                
+                function addBook() {
+                  book.setName(document.getElementById("name").value);
+                  book.setPrice(document.getElementById("price").value);
+                  book.setTitle(document.getElementById("title").value);
+                  book.setAuthor(document.getElementById("auhtor").value);
+                  var globalVariable={
+                           id:book.getId(),
+                             };
+                             printBook(globalVariable);
+                }
+                function printBook(s) {
+                    alert(s.id);
+                   // alert(globalVariable.id); 
+                   // document.getElementById("liid").innerHTML=book.getId();
+                    document.getElementById("liname").innerHTML=book.getName();
+                    document.getElementById("liprice").innerHTML=book.getPrice();
+                    document.getElementById("lititle").innerHTML=book.getTitle();
+                    document.getElementById("liauhtor").innerHTML=book.getAuthor();
+                }
+
+
+            </script>
+    </body>
+</html>

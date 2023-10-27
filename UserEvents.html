@@ -1,0 +1,40 @@
+<html>
+   
+    <br>
+    <br>
+    <center>
+    <input type="number" style="width:100px"min="1" max="10" id="t2id"/>
+    <br><br>
+    <input type="button" value="click me" id="btn" onclick="startCounting()"/>
+</center>
+<script>
+
+     var event=new Event("count");
+     document.addEventListener("count",countShow);
+    
+    function countShow(){
+        var count=0;
+        var temp=0;
+        setInterval(function(){ 
+            if(count < 5  && temp == 0 ){
+                count++;
+                document.getElementById("t2id").value=count;
+            } 
+            else if(count == 5){
+                count++;
+                temp=1;
+            } 
+            else if(temp > 0 &&  temp != count ){
+                document.getElementById("t2id").value=count-temp;
+                temp++;
+            }  
+        
+        },50);
+    }
+    
+        function startCounting(){
+            document.dispatchEvent(event);
+        }
+    
+</script>
+</html>

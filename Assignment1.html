@@ -1,0 +1,64 @@
+<body>
+    <form>
+       <label>FirstName</label><input type="text" name="firstName" placeholder="Enter first name"/><br><br>
+       <label>LastName</label> <input type="text" name="lastName" placeholder="Enter last name"/><br><br>
+        <label>Address</label><input type="text" name="Address" placeholder="Enter Address"/><br><br>
+        <label>phoneNo</label><input type="number" name="phoneNo" placeholder="Enter phoneNo"/><br><br>
+        <label>email</label><input type="email" name="email" placeholder="Enter email"/><br><br>
+        <input type="button" value="Add" onclick="AddInfo()"><br><input type="button" value="Get" onclick="GetInfo()">
+        <table id="Table" border="5px">
+            <tr><td>Firstname</td><td>LastName</td><td>Address</td><td>phoneNo</td><td>email</td></tr>
+        </table>
+    
+    </form>
+</body>
+<script>
+    function AddInfo(){
+        var fName=document.forms[0].firstName.value;
+        var lName=document.forms[0].lastName.value;
+        var Addr=document.forms[0].Address.value;
+        var phno=document.forms[0].phoneNo.value;
+        var email1=document.forms[0].email.value;
+        sessionStorage.firstName=fName;
+        sessionStorage.lastName=lName;
+        sessionStorage.Address=Addr;
+        sessionStorage.phoneNo=phno;
+        sessionStorage.email=email1;
+    }
+    function GetInfo(){
+  
+        var x = document.getElementById("Table");
+        document.body.appendChild(x);
+
+        var y = document.createElement("TR");
+        y.setAttribute("id", "myTr");
+        document.getElementById("Table").appendChild(y);
+
+        var z = document.createElement("TD");
+        var first=sessionStorage.getItem("firstName");
+        var t = document.createTextNode(first);
+        z.appendChild(t);
+        document.getElementById("myTr").appendChild(z);
+        var z = document.createElement("TD");
+        var first=sessionStorage.getItem("lastName");
+        var t = document.createTextNode(first);
+        z.appendChild(t);
+        document.getElementById("myTr").appendChild(z);
+        var z = document.createElement("TD");
+        var first=sessionStorage.getItem("Address");
+        var t = document.createTextNode(first);
+        z.appendChild(t);
+        document.getElementById("myTr").appendChild(z);
+        var z = document.createElement("TD");
+        var first=sessionStorage.getItem("phoneNo");
+        var t = document.createTextNode(first);
+        z.appendChild(t);
+        document.getElementById("myTr").appendChild(z);
+        var z = document.createElement("TD");
+        var first=sessionStorage.getItem("email");
+        var t = document.createTextNode(first);
+        z.appendChild(t);
+        document.getElementById("myTr").appendChild(z);
+
+    }
+</script>

@@ -1,0 +1,80 @@
+<html>
+   <style>
+
+   </style>
+    <center>
+    <form action="#"  id="form" novalidate  style=" width: 450px;background-color: rgb(217, 198, 198); border-radius: 10px; border-style: groove; margin-top: 100px;">
+          <!-- non validate is used for disabling the default form level vadiation -->
+          <br>
+        <label>Employee ID</label>
+        <input type="text" name="employeeID" readonly value="106834"/>
+        <br>
+       <br>
+        <label for="fname">First name</label> <input  id="text" type="text" 
+        name="firstName" placeholder="Enter your name" 
+        required max="30"
+        minlength="3"   onfocus="CheckType()" onblur="CheckFirstName()" />&nbsp;&nbsp;&nbsp;<b id="namerror"></b>
+        <br>
+        <br>
+        <label>Age</label><input type="number" min="18" max="60" name="empAge" size="5"  onblur="CheckAge()" onfocus="RemoveError()"/>&nbsp;&nbsp;&nbsp;<b id="ageError"></b><br>
+        <label>Volume</label><input type="range" min="10" max="100" style="width: 200;" name="fvolume" onchange="updateVolume()"/>
+       <input type="text" name="volLevel" style="width:60px;height:15px" readonly/>
+       <br><br>
+       <label>Date of joining </label><input type="date" min="31-03-1998" max="2023-09-26" name="joinDate"/><br><br>
+       <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upload the resume </label>
+       <input type="file"  name="filename" accept="audio/mp3,application/pdf"/><br><br>
+       Your email<input type="email" name="Email-id" minlength="6"/><br>
+      <br>
+       <input type="checkbox" id="checkBox" onclick="enableSave()">Agree the conditions<br><br>
+        <input type="submit" value="Save"   id="save" disabled />&nbsp;&nbsp;<input type="reset" id="reset" value="reset" onreset="GoingToClick()"/>
+        <br><br>
+    </form>
+    <script>
+        function updateVolume(){
+           document.forms[0].volLevel.value=document.forms[0].fvolume.value+"%";
+        }
+        function CheckType(){
+                var nerror=document.getElementById("namerror");
+                nerror.innerHTML="";    
+            }
+
+        function CheckFirstName(){
+            var fname=document.forms[0].firstName.value;
+            if(fname == ""){
+               var nerror=document.getElementById("namerror");
+               nerror.style.color="red";
+              // nerror.style.fontWeight="bold";
+               nerror.innerHTML="Please enter your first name";
+                //fname.focus();
+            }
+          
+        }
+            function CheckAge(){
+                var empAge=document.forms[0].empAge.value;
+                if(empAge == ""){
+                  
+               var nerror=document.getElementById("ageError");
+               nerror.style.color="red";
+              // nerror.style.fontWeight="bold";
+               nerror.innerHTML="Please enter your Age ";
+                }
+            }
+           function RemoveError(){
+               var nerror=document.getElementById("ageError");
+               nerror.innerHTML="";
+            }
+          function enableSave(){
+            var s=document.getElementById("checkBox");
+            if(s.checked){
+                document.getElementById("save").disabled=false;
+            }
+            else{
+                document.getElementById("save").disabled=true;
+            }
+          }
+            
+   </script>
+   </body>
+
+</center>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <center>
+    <form action="#" method="GET" >
+        <label>Employee ID</label>
+        <input type="text" name="employeeID" />
+        <br>
+       <br>
+        <label for="fname">First name</label> <input type="text" 
+        name="firstName" placeholder="Enter your name" 
+        required max="30"
+        minlength="3"/>
+        <br>
+        <br>
+        <label>Age</label><input type="number" min="18" max="60" name="empAge" size="5" /><br><br>
+        <input type="button" value="Save" onclick="saveData()"/>&nbsp;&nbsp;<input type="reset" onclick="resetData()" value="reset"/>
+        <input type="button" onclick="modifyData()" value="Modify"/>
+    </form>
+    <script> 
+        function saveData(){
+            var id=document.forms[0].employeeID.value;
+            var name=document.forms[0].firstName.value;
+            var age=document.forms[0].empAge.value;
+            console.log(id+"\t\t"+name+"\t\t"+age );
+            
+             localStorage.employeeID=id;
+             localStorage.setItem("Name",name);
+             localStorage.empAge=age;
+        }
+        function resetData(){
+          localStorage.removeItem("employeeID");
+        }
+        function modifyData(){
+            var name=document.forms[0].firstName.value;
+            localStorage.setItem("Name",name);
+        }
+    </script>
+</center>
+</html>

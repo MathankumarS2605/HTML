@@ -1,0 +1,26 @@
+
+    <link rel="stylesheet" href="C:\Users\mathankumar.s\HTML\fileCss.css"/>
+    <center>
+    <form action="#" method="GET">
+        <label>Employee ID</label>
+        <input type="text" name="employeeID" readonly value="106834"/>
+        <br>
+       <br>
+        <label for="fname">First name</label> <input type="text" 
+        name="firstName" placeholder="Enter your name" 
+        required max="30"
+        minlength="3"/>
+        <br>
+        <br>
+        <label>Age</label><input type="number" min="18" max="60" name="empAge" size="5" /><br><br>
+        <label>Volume</label><input type="range" min="10" max="100" style="width: 200;" name="fvolume" onchange="updateVolume()"/>
+       <input type="text" name="volLevel" style="width:60px;height:15px" readonly/>
+       <br><br>
+       <label>Date of joining </label><input type="date" min="31-03-1998" max="2023-09-26" name="joinDate"/><br><br>
+       <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upload the resume </label>
+       <input type="file"  name="filename" accept="audio/mp3,application/pdf"/><br><br>
+       Your email<input type="email" name="Email-id" minlength="6"/>
+        <input type="submit" value="Save" />&nbsp;&nbsp;<input type="reset" value="reset"/>
+    </form>
+    </script>
+</center>
